@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-box {
+    background-color: #004080; /* Blue */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    color: #ffd700; /* Gold */
+    font-size: 2.5em;
+    margin: 0;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.day-button {
+    background-color: #ffd700; /* Gold */
+    color: #004080; /* Blue */
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.day-button:hover {
+    background-color: #e6b800; /* Darker gold on hover */
+}
+
+.match-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.match {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shared-info {
+    background-color: #e0ebff; /* Light blue */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.person {
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #004080; /* Blue */
+}
+
+.blurb {
+    background-color: #f9f9f9;
+    border-left: 4px solid #ffd700; /* Gold */
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.blurb p {
+    margin: 0;
+    color: #333;
+    font-style: italic;
+}
+
+footer {
+    background-color: #004080; /* Blue */
+    color: #ffd700; /* Gold */
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px; /* Ensures the footer doesn't overlap with content */
+}
