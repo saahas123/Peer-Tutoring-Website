@@ -6,7 +6,7 @@
     <title>PeerTutoring</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="loadContent()">
     <header>
         <div class="title-box">
             <h1>UHS Peer Tutoring</h1>
@@ -14,57 +14,20 @@
     </header>
 
     <nav>
-        <button class="day-button">Monday</button>
-        <button class="day-button">Tuesday</button>
-        <button class="day-button">Wednesday</button>
-        <button class="day-button">Thursday</button>
-        <button class="day-button">Friday</button>
+        <button class="day-button" data-day="1">Monday</button>
+        <button class="day-button" data-day="2">Tuesday</button>
+        <button class="day-button" data-day="3">Wednesday</button>
+        <button class="day-button" data-day="4">Thursday</button>
+        <button class="day-button" data-day="5">Friday</button>
     </nav>
 
-    <section class="match-list">
-        <div class="match">
-            <div class="shared-info">
-                <p><strong>Subject:</strong> Math</p>
-                <p><strong>Location:</strong> Room 101</p>
-            </div>
-            <div class="person tutor">
-                <h2>Tutor</h2>
-                <p><strong>Name:</strong> John Doe</p>
-                <p><strong>Email:</strong> johndoe@example.com</p>
-            </div>
-            <div class="person student">
-                <h2>Student</h2>
-                <p><strong>Name:</strong> Jane Smith</p>
-                <p><strong>Email:</strong> janesmith@example.com</p>
-            </div>
-            <div class="blurb">
-                <p><strong>Blurb:</strong> Jane needs help with quadratic equations and graphing functions. Make sure to review graphing techniques.</p>
-            </div>
-        </div>
-
-        <div class="match">
-            <div class="shared-info">
-                <p><strong>Subject:</strong> Science</p>
-                <p><strong>Location:</strong> Room 202</p>
-            </div>
-            <div class="person tutor">
-                <h2>Tutor</h2>
-                <p><strong>Name:</strong> Alice Johnson</p>
-                <p><strong>Email:</strong> alicejohnson@example.com</p>
-            </div>
-            <div class="person student">
-                <h2>Student</h2>
-                <p><strong>Name:</strong> Bob Williams</p>
-                <p><strong>Email:</strong> bobwilliams@example.com</p>
-            </div>
-            <div class="blurb">
-                <p><strong>Blurb:</strong> Bob needs help with understanding cell biology and preparing for his midterm.</p>
-            </div>
-        </div>
+    <section class="match-list" id="matchList">
     </section>
 
     <footer>
-        <p>Contact us at: support@peertutoring.com</p>
+        <p>Contact us at: matlapudis25@ucfsd.net</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
