@@ -1,7 +1,7 @@
 const url = 'https://script.google.com/macros/s/AKfycbxt7W0WCMEiasLA4pB4ieADNEKqSVramNdfPcvbIrAN5oTUMqX9hk-kK55VWE1J1oHXVw/exec';
 var matchList = document.getElementById('matchList');
 
-var day = 1;
+var day = 0;
 document.querySelectorAll('.day-button').forEach(button => {
     
     button.addEventListener('click', function() {
@@ -19,7 +19,10 @@ document.querySelectorAll('.day-button').forEach(button => {
             console.log(day);
             
         });
-        loadContent();
+        if(day != this.getAttribute('data-day')){
+            loadContent();
+
+        }
     });
         
         
