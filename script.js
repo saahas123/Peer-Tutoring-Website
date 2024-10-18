@@ -26,19 +26,18 @@ document.querySelectorAll('.day-button').forEach(button => {
     
     
 });
-function loadContent(){
+function loadContent() {
+    matchList.innerHTML = ""; 
     fetch(url, { method: 'GET' })
-    .then(res => res.json()) 
-    .then(function(data){
-          var datesArr = data.tempDates;
-          var tutorsArr = data.tutors;
-          var studentsArr = data.students;
-  
-          processData(datesArr, tutorsArr, studentsArr);
-    }) 
-    .catch(error => console.error('Error:', error));
-  
- 
+        .then(res => res.json()) 
+        .then(function(data) {
+            var datesArr = data.tempDates;
+            var tutorsArr = data.tutors;
+            var studentsArr = data.students;
+
+            processData(datesArr, tutorsArr, studentsArr);
+        }) 
+        .catch(error => console.error('Error:', error));
 }
 
 
