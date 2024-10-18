@@ -2,9 +2,11 @@ const url = 'https://script.google.com/macros/s/AKfycbxt7W0WCMEiasLA4pB4ieADNEKq
 var matchList = document.getElementById('matchList');
 
 var day = 0;
+var isLoading = false; // Flag to track loading state
+
 document.querySelectorAll('.day-button').forEach(button => {
-    
     button.addEventListener('click', function() {
+        // Reset match list on button click
         matchList.innerHTML = "";
 
         day = parseInt(this.getAttribute('data-day'));
@@ -12,27 +14,23 @@ document.querySelectorAll('.day-button').forEach(button => {
             if (day === parseInt(but.getAttribute('data-day'))) {
                 but.style.backgroundColor = "#004080";
                 but.style.color = "#ffd700";  
-            }else{
+            } else {
                 but.style.backgroundColor = "#ffd700";
                 but.style.color = "#004080";  
             }
-            console.log(day);
-            
         });
-        if(day != this.getAttribute('data-day')){
-            loadContent();
 
+        // Only load content if not already loading
+        if (!isLoading) {
+            loadContent();
         }
     });
-        
-        
-    
-    
 });
+
 function loadContent() {
-    matchList.innerHTML = ""; 
+    isLoading = true; // Set loading state to true
     fetch(url, { method: 'GET' })
-        .then(res => res.json()) 
+        .then(res => res.json())
         .then(function(data) {
             var datesArr = data.tempDates;
             var tutorsArr = data.tutors;
@@ -40,15 +38,17 @@ function loadContent() {
 
             processData(datesArr, tutorsArr, studentsArr);
         }) 
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error))
+        .finally(() => {
+            isLoading = false; // Reset loading state
+        });
 }
-
 
 function processData(datesArr, tutorsArr, studentsArr) {
     for (let row = 1; row < datesArr.length; row++) {
         if (datesArr[row][day] !== 'x' && datesArr[row][day] !== "") {
             studentID = datesArr[row][day];
-            let subject = studentsArr[studentID][4]
+            let subject = studentsArr[studentID][4];
             let location = tutorsArr[row][4];
             let tutorName = tutorsArr[row][1];
             let tutorEmail = tutorsArr[row][3];
@@ -91,6 +91,5 @@ function addMatch(subject, location, tutorName, tutorEmail, studentName, student
     matchDiv.appendChild(studentDiv);
     matchDiv.appendChild(blurbDiv);
 
-    matchList = document.getElementById('matchList');
     matchList.appendChild(matchDiv);
 }
