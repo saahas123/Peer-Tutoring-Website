@@ -63,7 +63,7 @@ function processData(datesArr, tutorsArr, studentsArr) {
 
 function addMatch(subject, location, tutorName, tutorEmail, studentName, studentEmail, blurb) {
     const matchDiv = document.createElement('div');
-    matchDiv.classList.add('match');
+    matchDiv.classList.add('match', 'fade-in'); 
 
     const sharedInfoDiv = document.createElement('div');
     sharedInfoDiv.classList.add('shared-info');
@@ -92,4 +92,9 @@ function addMatch(subject, location, tutorName, tutorEmail, studentName, student
     matchDiv.appendChild(blurbDiv);
 
     matchList.appendChild(matchDiv);
+
+    setTimeout(() => {
+        matchDiv.classList.add('visible');
+    }, 10); 
 }
+

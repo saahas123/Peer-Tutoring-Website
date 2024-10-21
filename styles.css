@@ -91,10 +91,24 @@ h2 {
     font-style: italic;
 }
 
+/* Fade-in effect for new content */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease; /* Smooth fade-in transition */
+}
+
+.fade-in.visible {
+    opacity: 1; /* When the 'visible' class is added, the element fades in */
+}
+
+/* Footer transition */
 footer {
-    background-color: #004080; /* Blue */
-    color: #ffd700; /* Gold */
+    background-color: #004080;
+    color: #ffd700;
     text-align: center;
     padding: 10px;
-    margin-top: 20px; /* Ensures the footer doesn't overlap with content */
+    transition: all 0.5s ease; /* Smooth footer transition */
+    position: relative;
+    bottom: 0;
 }
+
