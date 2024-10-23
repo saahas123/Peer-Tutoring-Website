@@ -1,5 +1,37 @@
 const url = 'https://script.google.com/macros/s/AKfycbxt7W0WCMEiasLA4pB4ieADNEKqSVramNdfPcvbIrAN5oTUMqX9hk-kK55VWE1J1oHXVw/exec';
 var matchList = document.getElementById('matchList');
+var loginScreen = document.getElementById('loginScreen');
+var mainContent = document.getElementById('mainContent');
+var loginError = document.getElementById('loginError');
+
+// Predefined correct login credentials
+const correctUsername = 'admin';
+const correctPassword = 'password123';
+
+// Check if already logged in
+if (localStorage.getItem('isLoggedIn') === 'true') {
+    showMainContent();
+}
+
+// Event listener for login form
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+
+    if (username === correctUsername && password === correctPassword) {
+        localStorage.setItem('isLoggedIn', 'true');
+        showMainContent();
+    } else {
+        loginError.style.display = 'block'; // Show error message if login fails
+    }
+});
+
+function showMainContent() {
+    loginScreen.style.display = 'none'; // Hide login screen
+    mainContent.style.display = 'block'; // Show the main content
+}
 
 var day = 0;
 var isLoading = false; // Flag to track loading state
@@ -97,4 +129,3 @@ function addMatch(subject, location, tutorName, tutorEmail, studentName, student
         matchDiv.classList.add('visible');
     }, 10); 
 }
-

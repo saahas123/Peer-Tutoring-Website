@@ -6,27 +6,41 @@
     <title>PeerTutoring</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body >
-    <header>
-        <div class="title-box">
-            <h1>UHS Peer Tutoring</h1>
-        </div>
-    </header>
+<body>
+    <div id="loginScreen">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginError" style="color:red; display:none;">Incorrect username or password!</p>
+    </div>
 
-    <nav>
-        <button class="day-button" data-day="1">Monday</button>
-        <button class="day-button" data-day="2">Tuesday</button>
-        <button class="day-button" data-day="3">Wednesday</button>
-        <button class="day-button" data-day="4">Thursday</button>
-        <button class="day-button" data-day="5">Friday</button>
-    </nav>
+    <div id="mainContent" style="display:none;">
+        <header>
+            <div class="title-box">
+                <h1>UHS Peer Tutoring</h1>
+            </div>
+        </header>
 
-    <section class="match-list" id="matchList">
-    </section>
+        <nav>
+            <button class="day-button" data-day="1">Monday</button>
+            <button class="day-button" data-day="2">Tuesday</button>
+            <button class="day-button" data-day="3">Wednesday</button>
+            <button class="day-button" data-day="4">Thursday</button>
+            <button class="day-button" data-day="5">Friday</button>
+        </nav>
 
-    <footer>
-        <p>Please be patient with the site, it is a little slow. Sorry! For help, contact us at: matlapudis25@ucfsd.net</p>
-    </footer>
+        <section class="match-list" id="matchList">
+        </section>
+
+        <footer>
+            <p>Please be patient with the site, it is a little slow. Sorry! For help, contact us at: matlapudis25@ucfsd.net</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
