@@ -5,6 +5,60 @@ body {
     padding: 20px;
     color: #333;
 }
+#loginScreen {
+    background-color: #004080; /* Dark Blue */
+    width: 350px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 0 auto;
+}
+
+#loginScreen h1 {
+    color: #ffd700; /* Gold */
+    margin-bottom: 20px;
+}
+
+#loginForm label {
+    color: #ffd700; /* Gold */
+    font-weight: bold;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ffd700; /* Gold */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#loginForm button {
+    background-color: #ffd700; /* Gold */
+    color: #004080; /* Dark Blue */
+    border: none;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+    background-color: #e6b800; /* Slightly darker gold */
+}
+
+#loginError {
+    color: #ff4d4d; /* Light red for error message */
+    font-size: 14px;
+    display: none;
+    margin-top: 10px;
+}
+
+
 
 header {
     text-align: center;
