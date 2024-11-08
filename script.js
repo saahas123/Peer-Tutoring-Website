@@ -80,13 +80,13 @@ function processData(datesArr, tutorsArr, studentsArr) {
     for (let row = 1; row < datesArr.length; row++) {
         if (datesArr[row][day] !== 'x' && datesArr[row][day] !== "") {
             studentID = datesArr[row][day];
-            let subject = studentsArr[studentID][4];
+            let subject = studentsArr[studentID][5];
             let location = tutorsArr[row][4];
             let tutorName = tutorsArr[row][1];
             let tutorEmail = tutorsArr[row][3];
             let studentName = studentsArr[studentID][1];
             let studentEmail = studentsArr[studentID][2];
-            let blurb = studentsArr[studentID][5];
+            let blurb = studentsArr[studentID][6];
 
             addMatch(subject, location, tutorName, tutorEmail, studentName, studentEmail, blurb);
         }
